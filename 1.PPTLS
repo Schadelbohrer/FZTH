@@ -2,6 +2,7 @@ import random
 
 print("¡Pierda, papel, tijerass, lagarto o Spock!")
 contador = 3
+victorias = 0
 
 while contador > 0:
     opcion = input("Escribe tu opción: ")
@@ -30,28 +31,34 @@ while contador > 0:
             print("Papel envuelve a piedra. Has perdido")
         elif opcion_oponente == "tijeras":
             print("Piedra rompe tijeras. Has ganado")
+            victorias += 1
         elif opcion_oponente == "lagarto":
             print("Piedra aplasta lagarto. Has ganado")
+            victorias += 1
         else:
             print("Spock vaporiza piedra. Has perdido")
 
     elif opcion == "papel":
         if opcion_oponente == "piedra":
             print("Papel envuelve a piedra. Has ganado")
+            victorias += 1
         elif opcion_oponente == "tijeras":
             print("Tijeras cortan papel. Has perdido")
         elif opcion_oponente == "lagarto":
             print("Lagarto devora papel. Has perdido")
         else:
             print("Papel desautoriza Spock. Has ganado")
+            victorias += 1
 
     elif opcion == "tijeras":
         if opcion_oponente == "piedra":
             print("Piedra rompe tijeras. Has perdido")
         elif opcion_oponente == "papel":
             print("Tijeras cortan papel. Has ganado")
+            victorias += 1
         elif opcion_oponente == "lagarto":
             print("Tijeras decapitan lagarto. Has ganado")
+            victorias += 1
         else:
             print("Spock rompe tijeras. Has perdido")
 
@@ -60,20 +67,24 @@ while contador > 0:
             print("Piedra aplasta lagarto. Has perdido")
         elif opcion_oponente == "papel":
             print("Lagarto devora papel. Has ganado")
+            victorias += 1
         elif opcion_oponente == "tijeras":
             print("Tijeras decapitan lagarto. Has perdido")
         else:
             print("Lagarto envenena Spock. Has ganado")
+            victorias += 1
 
     elif opcion == "spock":
         if opcion_oponente == "piedra":
             print("Spock vaporiza piedra. Has ganado")
+            victorias += 1
         elif opcion_oponente == "papel":
             print("Papel desautoriza Spock. Has perdido")
         elif opcion_oponente == "tijeras":
             print("Spock rompe tijeras. Has ganado")
+            victorias += 1
         else:
             print("Lagarto envenena Spock. Has perdido")
     
     contador -= 1
-print("Fin del juego")
+print("Has ganado",victorias,". Fin del juego")
